@@ -1,14 +1,10 @@
 <?php
 
-
-
 require '../conexionbs.php';
-echo "<br>";
 $dbho = new conexionbs();
 
-
 if (isset($_POST['Enviar'])){
- 
+
     $identificacion = $_POST['identificacion'];
     $documento = $_POST['documento'];
 	$nombre = $_POST['nombre'];
@@ -22,18 +18,18 @@ if (isset($_POST['Enviar'])){
     $precio = $_POST['precio'];
     $cosa = $_POST['cosa'];
 
-
-
 	$query="INSERT INTO `clientes`(`identificacion`,`documento`, `nombre`, `apellido`, `genero`, `edad`, `direccion`, `telefono`, `examen`, `personal`,`precio`, `cosa`, `fecha`) VALUES ('$identificacion','$documento','$nombre','$apellido','$genero','$edad','$direccion','$telefono','$examen','$personal','$precio','$cosa','".date('Y-m-d')."')";
-
-$dbho -> query($query);
-
+	$dbho -> query($query);
+	echo('Datos guardados');
  } 
  
  
  
  if (isset($_POST['editar'])){
- 
+/* 	echo '<pre>';
+	var_export($_POST);
+	echo '<pre>';
+	exit; */
     $identificacion = $_POST['identificacion'];
     $documento = $_POST['documento'];
 	$nombre = $_POST['nombre'];
@@ -48,12 +44,9 @@ $dbho -> query($query);
     $cosa = $_POST['cosa'];
 	$id= $_POST['id'];
 
-
-
 	$query="UPDATE `clientes` SET `identificacion`='$identificacion',`documento`='$documento',`nombre`='$nombre',`apellido`='$apellido',`genero`='$genero',`edad`='$edad',`direccion`='$direccion',`telefono`='$telefono',`examen`='$examen',`personal`='$personal',`precio`='$precio',`cosa`='$cosa' WHERE codigo=$id";
-
-$dbho -> query($query);
-
+	$dbho -> query($query);
+	echo('Datos actualizados');
  } 
 
 

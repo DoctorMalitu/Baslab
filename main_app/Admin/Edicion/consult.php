@@ -176,14 +176,9 @@ if (isset($_SESSION['usuario'])) {
     <script src="../assets/js/moment.min.js"></script>
     <script src="../assets/js/bootstrap-datetimepicker.min.js"></script>
     <script src="../assets/js/app.js"></script>
-
+    <script src="../assets/js/consult.js"></script>
 </body>
                                     
 
 <!-- patients23:19-->
 </html>
-<script>
-   
-    
-
-    </script>

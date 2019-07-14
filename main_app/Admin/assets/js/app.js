@@ -151,6 +151,22 @@ $(document).ready(function($) {
 
 	// Datatable
 	if($('.datatable').length > 0) {
+		const content = `
+			<td class='text-right'>
+				<div class='dropdown dropdown-action'>
+					<a href='#' class='action-icon dropdown-toggle' data-toggle='dropdown' aria-expanded='false'>
+						<i class='fa fa-ellipsis-v'></i>
+					</a>
+					<div class='dropdown-menu dropdown-menu-right'>
+						<a id='edit-button' class='dropdown-item'>
+							<i class='fa fa-pencil m-r-5'></i>Editar</a>
+						<a class='dropdown-item' href='../../Edicion/editar.php' data-toggle='modal' data-target='#delete_patient'>
+							<i class='fa fa-trash-o m-r-5'></i> Eliminar
+						</a>
+					</div>
+				</div>
+			</td>`;
+
 		$('.datatable').DataTable({
 			"ajax":{
 				"method":"POST",
@@ -167,8 +183,15 @@ $(document).ready(function($) {
 				{"row":"edad"},
 				{"row":"personal"},
 				{"row":"fecha"},
-				{"defaultContent":"<td class='text-right'><div class='dropdown dropdown-action'><a href='#' class='action-icon dropdown-toggle' data-toggle='dropdown' aria-expanded='false'><i class='fa fa-ellipsis-v'></i></a><div class='dropdown-menu dropdown-menu-right'><a class='dropdown-item' href=\'editar.php?id=$row[codigo]\'><i class='fa fa-pencil m-r-5'></i> Edit</a><a class='dropdown-item' href='../../Edicion/editar.php' data-toggle='modal' data-target='#delete_patient'><i class='fa fa-trash-o m-r-5'></i> Delete</a></div></div></td>"}
+				{"defaultContent": content}
 			]
+		});
+
+		$('.datatable').on( 'draw.dt', function () {
+			$('.dropdown-toggle').on('click', function () {
+				const href = 'editar.php?id=' + $(this).closest('tr').find('td').eq(0).html();
+				$(this).parent().find('#edit-button').attr('href', href);
+			});
 		});
 	}
 	

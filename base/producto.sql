@@ -34,6 +34,10 @@ CREATE TABLE `producto` (
   `precio` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+ALTER TABLE `producto`
+  ADD PRIMARY KEY (`codigo`);
+COMMIT;
+
 --
 -- Volcado de datos para la tabla `producto`
 --
@@ -581,10 +585,6 @@ INSERT INTO `producto` (`codigo`, `nombre`, `precio`) VALUES
 --
 -- Indices de la tabla `producto`
 --
-ALTER TABLE `producto`
-  ADD PRIMARY KEY (`codigo`);
-COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

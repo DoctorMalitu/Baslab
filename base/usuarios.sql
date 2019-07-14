@@ -39,7 +39,9 @@ CREATE TABLE `usuarios` (
 --
 -- Volcado de datos para la tabla `usuarios`
 --
-
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+COMMIT;
 INSERT INTO `usuarios` (`id`, `Nombre`, `Usuario`, `Pasword`, `Tipo_usuario`) VALUES
 (1, 'Angel Alberto', 'Angel', '123', 'Admin'),
 (2, 'Michelle Estefania\r\n', 'Michelle', '1234', 'Usuario'),
@@ -55,9 +57,7 @@ INSERT INTO `usuarios` (`id`, `Nombre`, `Usuario`, `Pasword`, `Tipo_usuario`) VA
 --
 -- Indices de la tabla `usuarios`
 --
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`);
-COMMIT;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

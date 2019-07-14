@@ -3,16 +3,16 @@ require '../../conexionbs.php';
 if (isset($_GET['id'])) {
 	$dbho= new conexionbs();
 	$id=$_GET['id'];
-	
-	$query="SELECT * FROM clientes where codigo=$id";
-$res=$dbho->query($query);
-$datos=mysqli_fetch_array($res);
-$identificacion=mysqli_fetch_array($res);
-$genero=mysqli_fetch_array($res);
-$examen=mysqli_fetch_array($res);
-$personal=mysqli_fetch_array($res);
-}else{
-header("location:index.html");
+	$query="SELECT * FROM clientes WHERE codigo = ".$id;
+	$res=$dbho->query($query);
+	$datos=mysqli_fetch_array($res);
+	$identificacion=mysqli_fetch_array($res);
+	$genero=mysqli_fetch_array($res);
+	$examen=mysqli_fetch_array($res);
+	$personal=mysqli_fetch_array($res);
+}
+else {
+	header("location:index.html");
 }
  ?>
 <!DOCTYPE html>

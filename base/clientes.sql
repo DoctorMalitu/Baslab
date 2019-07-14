@@ -49,6 +49,21 @@ CREATE TABLE `clientes` (
 -- Volcado de datos para la tabla `clientes`
 --
 
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `clientes`
+--
+ALTER TABLE `clientes`
+  ADD PRIMARY KEY (`codigo`);
+
+ALTER TABLE `clientes`
+  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
+COMMIT;
+
 INSERT INTO `clientes` (`codigo`, `identificacion`, `documento`, `nombre`, `apellido`, `genero`, `edad`, `direccion`, `telefono`, `examen`, `personal`, `precio`, `cosa`, `fecha`) VALUES
 (112, 'CC', '232345', 'Joan', 'Rayuela', '', 23, 'esquina de don chucho', '23234545', 'Examen', 'Empresa', 200000, 'Paciente con sueño', '2018-10-01'),
 (132, 'TT', '123123', 'jose luis', 'humberto ovalle', 'Mujer', 0, 'dsasd', '456465456456', 'Orina', 'Particular', 100000, '4564', '2018-10-12'),
@@ -62,17 +77,6 @@ INSERT INTO `clientes` (`codigo`, `identificacion`, `documento`, `nombre`, `apel
 (142, 'CC', '4564654', 'camilo', 'mora', '', 20, '45645 jhhjk', '456456456456456', 'Examen', 'Empresa', 10000, 'Entregado', '2019-02-23'),
 (143, 'Empresa', '12312345', 'dolly', 'roncancio', 'Mujer', 56, '23132123123', '3114804111', 'Examen', 'Empresa', 456456456, 'Entregado', '2019-02-23'),
 (144, 'Empresa', '11223135', 'hgrgfdsgfd', 'bgfbgfd', 'Hombre', 12, 'cll 79', '4856', 'Examen', 'Empresa', 56132, 'Pendiente', '2019-03-05');
-
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `clientes`
---
-ALTER TABLE `clientes`
-  ADD PRIMARY KEY (`codigo`);
-
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
@@ -80,10 +84,6 @@ ALTER TABLE `clientes`
 --
 -- AUTO_INCREMENT de la tabla `clientes`
 --
-ALTER TABLE `clientes`
-  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
-COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
